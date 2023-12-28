@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Product.Models.ProductModel>
+
+<head>
+    <link rel="stylesheet" href="~/css/mainstyle.css">
+    <title>LAB8</title>
+</head>
+
+<body>
+    <div class="container">
+        <h2>Товари</h2>
+
+        <h3>List</h3>
+        <ul>
+            @foreach (var product in Model)
+            {
+                <li>@product.ID. @product.Name - @product.Price грн (@product.CreatedDate)</li>
+            }
+        </ul>
+
+        <h3>Table</h3>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Created Date</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var product in Model)
+                {
+                    <tr>
+                        <td>@product.ID</td>
+                        <td>@product.Name</td>
+                        <td>@product.Price грн</td>
+                        <td>@product.CreatedDate</td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</body>
